@@ -14,9 +14,15 @@ def calculate_area_from_entries(entry_a, entry_b, entry_c):
         a = float(entry_a.get())
         b = float(entry_b.get())
         c = float(entry_c.get())
+        
 
         area = calculate_triangle_area(a, b, c)
         messagebox.showinfo("Резултат", f"Лицето на триъгълника е {area:.2f}")
 
     except ValueError as e:
         messagebox.showerror("Грешка", str(e))
+
+def clear_entries(entry_a, entry_b, entry_c):
+    entry_a.delete(0, "end")
+    entry_b.delete(0, "end")
+    entry_c.delete(0, "end")
