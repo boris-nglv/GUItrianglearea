@@ -1,5 +1,5 @@
 import tkinter as tk
-from logic import calculate_area_from_entries
+from logic import calculate_area_from_entries, clear_entries
 
 root = tk.Tk()
 root.title("Лице на триъгълник")
@@ -24,5 +24,8 @@ button.grid(row=3, column=0, columnspan=2, pady=10)
 triangle_img = tk.PhotoImage(file="triangle.png.png")
 triangle_label = tk.Label(root, image=triangle_img)
 triangle_label.grid(row=0, column=2, rowspan=4, padx=20, pady=10)
+
+clear_button = tk.Button(root, text="Изчисти", command=lambda: clear_entries(entry_a, entry_b, entry_c), bg="#f44336", fg="white", font=("Arial", 12))
+clear_button.grid(row=4, column=0, columnspan=2, pady=5)
 
 root.mainloop()
